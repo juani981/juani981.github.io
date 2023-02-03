@@ -1,0 +1,110 @@
+/* Paleta de tema claro */
+:root {
+    --color-fuente: #000000;
+    --color-cuerpo-fondo: #5ebfff33;
+    --color-decoraciones-fondo: #32adff26;
+    --color-popup: #6fb7eb;
+}
+/*Paleta de tema oscuro*/
+[tema="oscuro"]{
+    --color-fuente: #ffffff;
+    --color-cuerpo-fondo: #001e32;
+    --color-decoraciones-fondo: #003152;
+    --color-popup: #8cccf6;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    color: var(--color-fuente);
+    background-color: var(--color-cuerpo-fondo);
+    transition: background-color 1s ease-out, color 1s ease-out;
+}
+h1{
+    text-align: center;
+}
+#foto_perfil{
+    background-color: var(--color-decoraciones-fondo);
+}
+#foto_perfil figure{
+    width: 128px;
+    height: 128px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+#spinner{
+    transition: all 1s;
+}
+.columnas-decoradas{
+    background-color: var(--color-decoraciones-fondo);
+    margin: 1rem;
+}
+.barra-de-datos{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+footer{
+    margin-top: 5rem;
+}
+
+/*El siguiente codigo está encargado del tema oscuro, su slider, y el tooltip*/
+  .switch-wrapper{
+    padding-top: 0.5rem;
+    padding-left: 2rem;
+    display: flex;
+    align-items: center;
+  }
+  .switch-wrapper #switch{
+    margin-left: 1rem;
+  }
+  
+  p.tooltip-text {
+    display: none;
+    position: absolute;
+    top: 3rem;
+    z-index: 1;
+    background-color: var(--color-popup);
+    color: var(--color-fuente);
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 2px;
+    animation: fadeIn 0.6s;
+  }
+
+  /*animacion simple que cambia la opacidad de invisible a visible el tooltip*/
+  @keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+  }
+
+
+
+/*Opciones responsive*/
+
+/*Medium devices (tablets, 768px and up)*/
+/*@media (min-width: 768px) {
+    
+}
+/*X-Small devices (portrait phones, less than 576px)No media query for `xs` since this is the default in Bootstrap
+*/
+/*Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+*/
+/*Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+*/
+
+/*Large devices (desktops, 992px and up)*/
+/*@media (min-width: 992px) { 
+ }
+
+/*X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+*/
+/*XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {}
+*/

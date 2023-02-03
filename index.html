@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Curriculum Vitae Digital">
+    <meta name="author" content="Carrizo Juan Ignacio">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Se importa Font-Awesome-->
+    <script src="https://kit.fontawesome.com/53cb4d4e60.js" crossorigin="anonymous"></script>
+    <!--Se importa Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
+    <!--Se importan mas hojas de estilos por encima para aplicar estilos especificos-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_slider.css">
+    <title>CV DIGITAL</title>
+    <link rel="icon" type="image/x-icon" href="" id="favicon">
+</head>
+<body>
+    <div class="switch-wrapper float-start">
+        <span class="col-auto fa-solid fa-moon"></span>
+        <label class="switch" id="switch">
+            
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+        <p class="text-center tooltip-text" id="ayuda-modo-oscuro">Modo Oscuro</p>
+        <script src="./js/temaOscuro.js"></script>
+        <script src="./js/toolTips.js"></script>
+    </div>
+    <header class="container">
+        <h1>Curriculum Vitae Digital</h1>  
+        <script src="./js/getPersona.js"></script> 
+    </header>
+    <section class="d-flex justify-content-around align-items-center" id="foto_perfil">
+        <h2 class="text-center" id="nombre">Generando solicitante...</h2>
+        <figure class="foto">
+            <div class="spinner-border" role="status" id="spinner">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <img style="display:none;" class="img-fluid rounded-circle" id="profile_pic" alt="Foto del rostro de la persona solicitante">  
+        </figure>
+    </section>
+<main class="container">
+
+    <section class="row">
+        <cite class="text" id="descripcion-profesional"></cite>
+    </section>
+    <section class="row">
+        
+        <article class="col-md columnas-decoradas" id="informacion-personal">
+            
+            <p class="text-center">Mis datos personales</p>
+            <ul class="row list-unstyled text-left">
+                <li class="col-auto fa-solid fa-map-location-dot"></li>
+                <li class="col text-start" id="nacionalidad"></li>
+            </ul>
+            <ul class="row list-unstyled text-left">
+                <li class="col-auto fa-solid fa-location-dot"></li>
+                <li class="col text-start" id="direccion"></li>
+            </ul>
+            <ul class="row list-unstyled text-left justify-content-between" >                
+                <li class="col-auto fa-solid fa-envelope"></li>
+                <li class="col text-start" id="mail"></li>
+            </ul>
+            <ul class="row list-unstyled text-left">
+                <li class="col-auto fa-solid fa-phone"></li>
+                <li class="col text-start" id="telefono"></li>
+            </ul>
+            <ul class="row list-unstyled text-left">
+                <li class="col-auto fa-solid fa-calendar-days"></li>
+                <li class="col text-start" id="edad"></li>
+            </ul>
+        </article>
+        <article class="col-md columnas-decoradas" id="redes-sociales">
+            <p class="text-center">Redes</p>
+            <ul class="row list-unstyled text-left">
+                <li class="col-auto fa-brands fa-instagram"></li>
+                <li class="col text-start" id="instagram"></li>
+            </ul>
+            <ul class="row list-unstyled text-left">
+                <li class="col-auto fa-brands fa-linkedin"></li>
+                <li class="col text-start" id="linkedin"></li>
+            </ul>
+            <ul class="row list-unstyled text-left">
+                <li class="col-auto fa-brands fa-twitter"></li>
+                <li class="col text-start" id="twitter"></li>
+            </ul>
+            <ul class="row list-unstyled text-left">
+                <li class="col-auto fa-brands fa-github"></li>
+                <li class="col text-start" id="github"></li>
+            </ul>
+            <ul class="row list-unstyled text-left">
+                <li class="col-auto fa-brands fa-stack-overflow"></li>
+                <li class="col text-start" id="stack-overflow"></li>
+            </ul>
+        </article>
+    </section>
+    <section class="row">
+        <article class="col-xxl columnas-decoradas">
+            <p class="text-center">Experiencia Destacable</p>
+            <p class="text" id="experiencia-profesional-1"></p>
+        </article>
+        <article class="col-xxl columnas-decoradas">
+            <p class="text-center">Experiencia Destacable</p>
+            <p class="text" id="experiencia-profesional-2"></p> 
+        </article>
+    </section>
+    <section class="row">    
+    
+        <article class="col-md columnas-decoradas" id="idiomas">
+                <p class="text-center">Idiomas</p>
+                <div class="barra-de-datos">
+                    <p class="">Ingles</p>
+                    <div class="progress" style="height: 0.5rem;">
+                        <div id="lenguaje-ingles" class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="barra-de-datos">
+                    <p class="">Frances</p>
+                    <div class="progress" style="height: 0.5rem;">
+                    <div id="lenguaje-frances" class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>    
+                <div class="barra-de-datos">  
+                    <p class="">Portugés</p> 
+                    <div class="progress" style="height: 0.5rem;">
+                        <div id="lenguaje-portuges" class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+        </article>    
+        <article class="col-md columnas-decoradas" id="aptitudes">
+            <p class="text-center">Aptitudes</p>
+            <div class="barra-de-datos">
+                <p>Predisposicion</p>
+                <div class="progress" style="height: 0.5rem;" >
+                    <div id="predisposicion" class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <div class="barra-de-datos">  
+                <p>Trabajo en equipo</p>
+                <div class="progress" style="height: 0.5rem;" >
+                    <div id="trabajo-en-equipo" class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+            </div>
+            <div class="barra-de-datos">
+                <p>Ofimática</p>
+                    <div class="progress" style="height: 0.5rem;" >
+                    <div id="ofimatica" class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>    
+            </div>
+        </article>
+            <script src="./js/getRandomData.js" type="module"></script>  
+    </section>    
+</main>
+    <footer>
+        <p class="text-center">Descargo de Responsabilidad: Todos los datos presentados son ficticios, ésto es una página de prueba</p>
+        <p class="text-center">Sitio creado por Carrizo Juan Ignacio</p>
+        <p class="text-center">2023 Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
