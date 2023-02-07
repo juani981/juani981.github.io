@@ -21,7 +21,7 @@
 body{
     color: var(--color-fuente);
     background-color: var(--color-cuerpo-fondo);
-    transition: background-color 1s ease-out, color 1s ease-out;
+    transition: color 1s ease-out;
 }
 h1{
     text-align: center;
