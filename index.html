@@ -13,149 +13,162 @@
     <!--Se importan mas hojas de estilos por encima para aplicar estilos especificos-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_slider.css">
-    <title>CV DIGITAL</title>
+    <title>Curriculum Vitae</title>
     <link rel="icon" type="image/x-icon" href="" id="favicon">
 </head>
 <body>
-    <div class="switch-wrapper float-start">
-        <span class="col-auto fa-solid fa-moon"></span>
-        <label class="switch" id="switch">
-            
-            <input type="checkbox">
-            <span class="slider round"></span>
-        </label>
-        <p class="text-center tooltip-text" id="ayuda-modo-oscuro">Modo Oscuro</p>
-        <script src="./js/temaOscuro.js"></script>
-        <script src="./js/toolTips.js"></script>
-    </div>
-    <header class="container">
-        <h1>Curriculum Vitae Digital</h1>  
-        <script src="./js/getPersona.js"></script> 
+
+    <header class="d-flex flex-row align-items-center justify-content-between px-4">
+        <div class="switch-wrapper">
+            <span class="col-auto fa-solid fa-sun"></span>
+            <label class="switch" id="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <span class="col-auto fa-solid fa-moon"></span>
+            <p class="text-center tooltip-text" id="ayuda-modo-oscuro"></p>
+            <script src="./js/temaOscuro.js"></script>
+    
+        </div>
+    
+        <h1 class="text-center">Curriculum Vitae</h1>  
+  
+        <div class="link-web">
+            <a href="">
+            <span class="col-auto text-center fa-solid fa-arrow-up-right-from-square"></span>
+            <span class="text">Version Web</span>
+            </a>
+        </div>
     </header>
     <section class="d-flex justify-content-around align-items-center" id="foto_perfil">
-        <h2 class="text-center" id="nombre">Generando solicitante...</h2>
+        <h2 class="text-center" id="nombre">Juan Ignacio Carrizo</h2>
         <figure class="foto">
-            <div class="spinner-border" role="status" id="spinner">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-            <img style="display:none;" class="img-fluid rounded-circle" id="profile_pic" alt="Foto del rostro de la persona solicitante">  
+            <img style="display:block;" class="img-fluid rounded-circle" id="profile_pic" alt="Foto del rostro de la persona solicitante" src="img/LinkedIn_pic.jfif">  
         </figure>
     </section>
-<main class="container">
+<main class="container mx-auto">
 
     <section class="row">
-        <cite class="text" id="descripcion-profesional"></cite>
+        <cite class="text-center" id="descripcion-profesional">
+            Soy un profesional emergente, con predisposición a aprender tecnologías nuevas, ofrecer soluciones lógicas ante problemas de cualquier complejidad en el área IT, y desenvolverme de la mejor manera en un entorno de trabajo multidisciplinario.  
+        </cite>
     </section>
     <section class="row">
         
         <article class="col-md columnas-decoradas" id="informacion-personal">
             
-            <p class="text-center">Mis datos personales</p>
+            <h5 class="text-center">Mis datos personales</h5>
             <ul class="row list-unstyled text-left">
                 <li class="col-auto fa-solid fa-map-location-dot"></li>
-                <li class="col text-start" id="nacionalidad"></li>
+                <li class="col text-start" id="nacionalidad">Soy de: Tucumán</li>
             </ul>
             <ul class="row list-unstyled text-left">
                 <li class="col-auto fa-solid fa-location-dot"></li>
-                <li class="col text-start" id="direccion"></li>
-            </ul>
-            <ul class="row list-unstyled text-left justify-content-between" >                
-                <li class="col-auto fa-solid fa-envelope"></li>
-                <li class="col text-start" id="mail"></li>
-            </ul>
-            <ul class="row list-unstyled text-left">
-                <li class="col-auto fa-solid fa-phone"></li>
-                <li class="col text-start" id="telefono"></li>
+                <li class="col text-start" id="direccion">Vivo en: Alderetes, Departamento Cruz Alta, Tucumán</li>
             </ul>
             <ul class="row list-unstyled text-left">
                 <li class="col-auto fa-solid fa-calendar-days"></li>
-                <li class="col text-start" id="edad"></li>
+                <li class="col text-start" id="edad">Tengo: 25 años</li>
             </ul>
         </article>
         <article class="col-md columnas-decoradas" id="redes-sociales">
-            <p class="text-center">Redes</p>
+            <h5 class="text-center">Mis datos de Contacto</h5>
+            <ul class="row list-unstyled text-left justify-content-between">                
+                <li class="col-auto fa-solid fa-envelope"></li>
+                <li class="col text-start" id="mail">juanicarrizo97@gmail.com</li>
+            </ul>
             <ul class="row list-unstyled text-left">
-                <li class="col-auto fa-brands fa-instagram"></li>
-                <li class="col text-start" id="instagram"></li>
+                <li class="col-auto fa-solid fa-phone"></li>
+                <li class="col text-start" id="telefono">381677340</li>
             </ul>
             <ul class="row list-unstyled text-left">
                 <li class="col-auto fa-brands fa-linkedin"></li>
-                <li class="col text-start" id="linkedin"></li>
+                <li class="col text-start" id="linkedin"><a href="https://www.linkedin.com/in/juan-ignacio-carrizo-juani981">Mi perfil en LinkedIn<span class="col-auto fa-solid fa-arrow-up-right-from-square"></span></a></li>
+                
             </ul>
-            <ul class="row list-unstyled text-left">
-                <li class="col-auto fa-brands fa-twitter"></li>
-                <li class="col text-start" id="twitter"></li>
-            </ul>
-            <ul class="row list-unstyled text-left">
-                <li class="col-auto fa-brands fa-github"></li>
-                <li class="col text-start" id="github"></li>
-            </ul>
-            <ul class="row list-unstyled text-left">
-                <li class="col-auto fa-brands fa-stack-overflow"></li>
-                <li class="col text-start" id="stack-overflow"></li>
-            </ul>
+            
+        </article>
+    </section>
+    <section class="row">
+        <article class="col-md columnas-decoradas" id="Formacion-academica">
+            <h5 class="text-center">Formación Académica</h5>
+            <p><strong>Secundario</strong> Bachiller - Colegio San José Obrero - Alderetes (2015)</p>
+            <p><strong>Universitario:</strong> UNT - Ingeniería Electrónica (2016-Actualidad)</p>
+            <p><strong>Universitario:</strong> UNT - Programador Universitario (Último año en curso) (2021-Actualidad)</p>
+            <p><strong>Curso Adicional:</strong> Argentina Programa 4.0 - Primeros Pasos en Front-End (2023)</p>
+        </article>
+        <article class="col-md columnas-decoradas" id="Formacion-academica">
+            <h5 class="text-center">Habilidades en Programación</h5>
+            <li><strong>C#:</strong> POO, .NET Framework, ASP.NET patrón MVC, CRUD en ADO.NET, Páginas en Blazor, Linq.</li>
+            <li><strong>Python:</strong> POO, Métodos Numéricos y Ciencia de datos</li>
+            <li><strong>Web:</strong> php, HTML5, Bootstrap, CSS3, JavaScript</li>
+            <li><strong>Bases de datos:</strong> E/R, MySQL, PostgreSQL, SQLite</li>
+            <li><strong>Otros:</strong> Programación en C/C++, Lua, Control de versiones con git, Pseudocódigo y análisis de algoritmos, uso de terminal en Linux y Windows</li>
         </article>
     </section>
     <section class="row">
         <article class="col-xxl columnas-decoradas">
-            <p class="text-center">Experiencia Destacable</p>
-            <p class="text" id="experiencia-profesional-1"></p>
+            <h5 class="text-center">Experiencia Laboral</h5>
+            <li class="text" id="experiencia-profesional-1">Freelance: Instalaciones Eléctricas Domiciliarias - Instalación de Luminaria 
+                <br>(2017-Actualidad)
+            </li>
         </article>
         <article class="col-xxl columnas-decoradas">
-            <p class="text-center">Experiencia Destacable</p>
-            <p class="text" id="experiencia-profesional-2"></p> 
+            <h5 class="text-center">Experiencia Laboral</h5>
+            <li class="text" id="experiencia-profesional-2">Freelance: Técnico en Electrónica de propósito general
+                <br>(2020-Actualidad)
+            </li> 
         </article>
     </section>
     <section class="row">    
     
         <article class="col-md columnas-decoradas" id="idiomas">
-                <p class="text-center">Idiomas</p>
+                <h5 class="text-center">Destreza en Idiomas</h5>
                 <div class="barra-de-datos">
-                    <p class="">Ingles</p>
+                    <p class="">Inglés Técnico Aplicado al área de Programación y afines</p>
                     <div class="progress" style="height: 0.5rem;">
-                        <div id="lenguaje-ingles" class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div id="lenguaje-ingles" class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                 </div>
                 <div class="barra-de-datos">
-                    <p class="">Frances</p>
+                    <p class="">Inglés Escrito</p>
                     <div class="progress" style="height: 0.5rem;">
-                    <div id="lenguaje-frances" class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div id="lenguaje-frances" class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                 </div>    
                 <div class="barra-de-datos">  
-                    <p class="">Portugés</p> 
+                    <p class="">Inglés Oral</p> 
                     <div class="progress" style="height: 0.5rem;">
                         <div id="lenguaje-portuges" class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                 </div>
         </article>    
         <article class="col-md columnas-decoradas" id="aptitudes">
-            <p class="text-center">Aptitudes</p>
+            <h5 class="text-center">Aptitudes</h5>
             <div class="barra-de-datos">
-                <p>Predisposicion</p>
+                <p>Predisposicion a aprender nuevas tecnologías y metodologías</p>
                 <div class="progress" style="height: 0.5rem;" >
-                    <div id="predisposicion" class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div id="predisposicion" class="progress-bar" role="progressbar" style="width: 99%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>
             <div class="barra-de-datos">  
-                <p>Trabajo en equipo</p>
+                <p>Trabajo y Comunicación en el trabajo en equipo</p>
                 <div class="progress" style="height: 0.5rem;" >
-                    <div id="trabajo-en-equipo" class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div id="trabajo-en-equipo" class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
             </div>
             <div class="barra-de-datos">
-                <p>Ofimática</p>
+                <p>Herramientas de Ofimática</p>
                     <div class="progress" style="height: 0.5rem;" >
-                    <div id="ofimatica" class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div id="ofimatica" class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>    
             </div>
         </article>
-            <script src="./js/getRandomData.js" type="module"></script>  
-    </section>    
+    </section>
+        
 </main>
     <footer>
-        <p class="text-center">Descargo de Responsabilidad: Todos los datos presentados son ficticios, ésto es una página de prueba</p>
-        <p class="text-center">Sitio creado por Carrizo Juan Ignacio</p>
+        <p class="text-center">Sitio creado por Juan Ignacio Carrizo</p>
         <p class="text-center">2023 Todos los derechos reservados</p>
     </footer>
 </body>
