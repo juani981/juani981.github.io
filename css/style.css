@@ -23,7 +23,7 @@ header{
     align-items: center;
     color: var(--color-fuente);
 }
-body{
+body,#main-container{
     color: var(--color-fuente);
     background-color: var(--color-cuerpo-fondo);
     transition: color 1s ease-out;
@@ -63,6 +63,9 @@ a{
 }
 footer{
     margin-top: 5rem;
+}
+#link-web{
+    display: none;
 }
 
 /*El siguiente codigo está encargado del tema oscuro, su slider, y el tooltip*/
