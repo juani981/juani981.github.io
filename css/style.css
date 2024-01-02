@@ -86,7 +86,7 @@ footer{
 }
   
   #switch::after{
-    content: "Modo Oscuro";
+    content: "Dark Mode";
     visibility: hidden;
     position: absolute;
     top: 3rem;
