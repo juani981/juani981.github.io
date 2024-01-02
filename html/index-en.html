@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Digital Curriculum Vitae">
+    <meta name="author" content="Carrizo Juan Ignacio">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font-Awesome is imported -->
+    <script src="https://kit.fontawesome.com/53cb4d4e60.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap is imported -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
+    <!-- Additional style sheets are imported above to apply specific styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style_slider.css">
+    <!-- html2pdf library is added -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Curriculum Vitae</title>
+    <link rel="icon" type="image/x-icon" href="" id="favicon">
+</head>
+<body id="main-container">
+    <script>
+        async function convertToPDF() {
+            // First, hide the download button and dark mode, and display the web link element
+            document.getElementById("download-button").style.display = "none";
+            document.getElementById("dark-mode-container").style.display = "none";
+            document.getElementById("link-web").style.display = "block";
+            document.getElementById("footer").style.display = "none";
+
+            var element = document.getElementById('main-container'); // Replace with the ID of the parent or container element
+            var options = {
+                margin: 0,
+                filename: 'CV-CarrizoJuanIgnacio.pdf',
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+                pagebreak: { mode: 'avoid-all' }
+            };
+
+            // New Promise-based usage:
+            await html2pdf().set(options).from(element).save();
+
+            // Show the hidden elements again since hiding was temporary until the download is complete
+            document.getElementById("download-button").style.display = "block";
+            document.getElementById("dark-mode-container").style.display = "block";
+            document.getElementById("link-web").style.display = "none";
+            document.getElementById("footer").style.display = "block";
+        }
+    </script>
+    <header class="d-flex flex-row align-items-center justify-content-between px-4">
+        <div class="switch-wrapper" id="dark-mode-container">
+            <span class="col-auto fa-solid fa-sun"></span>
+            <label class="switch" id="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <span class="col-auto fa-solid fa-moon"></span>
+            <p class="text-center tooltip-text" id="dark-mode-help"></p>
+            <script src="../js/darkMode.js"></script>
+        </div>
+
+        <h1 class="text-center">Curriculum Vitae</h1>  
+
+        <div class="link-web" id="download-button">   
+            <a href=# onclick="convertToPDF();return false;">Download as PDF<span class="col-auto fa-solid fa-file-arrow-down"></span></a>
+        </div>
+        <div class="link-web" id="link-web" display="none">
+            <a href="https://juani981cv.netlify.app/">
+                <span class="col-auto text-center fa-solid fa-arrow-up-right-from-square"></span>
+                <span class="text">View on the Web</span>
+            </a>
+        </div>
+    </header>
+    <section class="d-flex justify-content-around align-items-center" id="foto_perfil">
+        <h2 class="text-center" id="nombre">Juan Ignacio Carrizo</h2>
+        <figure class="foto">
+            <img style="display:block;" class="img-fluid rounded-circle" id="profile_pic" alt="Applicant's face photo" src="../img/LinkedIn_pic.jfif">  
+        </figure>
+    </section>
+    <main class="container mx-auto">
+        <section class="row">
+            <cite class="text-center" id="professional-description">
+                Recent graduate programmer seeking my first role as a software developer. With solid technical knowledge backed by my academic background, I offer practical skills in the analysis, design, and development of software solutions. Passionate about problem-solving and continuous learning.
+            </cite>
+        </section>
+        <section class="row">
+            <article class="col-md columnas-decoradas" id="personal-information">
+                <h5 class="text-center">My Personal Information</h5>
+                <ul class="row list-unstyled text-left">
+                    <li class="col-auto fa-solid fa-map-location-dot"></li>
+                    <li class="col text-start" id="nationality">From: Tucumán</li>
+                </ul>
+                <ul class="row list-unstyled text-left">
+                    <li class="col-auto fa-solid fa-location-dot"></li>
+                    <li class="col text-start" id="address">Living in: Alderetes, Cruz Alta, Tucumán</li>
+                </ul>
+                <ul class="row list-unstyled text-left">
+                    <li class="col-auto fa-solid fa-calendar-days"></li>
+                    <li class="col text-start" id="age">Age: 26 years</li>
+                </ul>
+            </article>
+            <article class="col-md columnas-decoradas" id="contact-details">
+                <h5 class="text-center">My Contact Details</h5>
+                <ul class="row list-unstyled text-left justify-content-between">
+                    <li class="col-auto fa-solid fa-envelope"></li>
+                    <li class="col text-start" id="email">juanicarrizo97@gmail.com</li>
+                </ul>
+                <ul class="row list-unstyled text-left">
+                    <li class="col-auto fa-solid fa-phone"></li>
+                    <li class="col text-start" id="phone">(+54) 381 670-6133</li>
+                </ul>
+                <ul class="row list-unstyled text-left">
+                    <li class="col-auto fa-brands fa-linkedin"></li>
+                    <li class="col text-start" id="linkedin"><a href="https://www.linkedin.com/in/juan-ignacio-carrizo-juani981">My LinkedIn Profile<span class="col-auto fa-solid fa-arrow-up-right-from-square"></span></a></li>
+                </ul>
+            </article>
+        </section>
+        <section class="row">
+            <article class="col-md columnas-decoradas" id="academic-background">
+                <h5 class="text-center">Academic Background</h5>
+                <p><strong>High School:</strong> Bachelor - San José Obrero School - Alderetes (2015)</p>
+                <p><strong>University:</strong> National University of Tucumán - Electronic Engineering (2016-Present)</p>
+                <p><strong>University:</strong> National University of Tucumán - Computer Science Bachelor (2021-2024)</p>
+                <p><strong>Additional Course:</strong> Argentina Programa 4.0 - First Steps in Front-End (2023)</p>
+                <p><strong>Additional Course:</strong> Argentina Programa 4.0 - Data Analysis in Python (2023)</p>
+            </article>
+            <article class="col-md columnas-decoradas" id="programming-skills">
+                <h5 class="text-center">Programming Skills</h5>
+                <li><strong>C#:</strong> OOP, .NET Framework, ASP.NET MVC pattern, CRUD in ADO.NET, Blazor Pages, Linq.</li>
+                <li><strong>Python:</strong> OOP, Numerical Methods, Data Science, Machine Learning</li>
+                <li><strong>Web:</strong> Laravel 9, PHP, HTML5, CSS3, Bootstrap, JavaScript, React, RESTful API</li>
+                <li><strong>Databases:</strong> Relational Database, E/R, MySQL, PostgreSQL, SQLite, PL/SQL</li>
+                <li><strong>Others:</strong> C/C++ Programming, Lua, Software Design and Architecture Principles, Git version control, Pseudocode and Algorithm Analysis, knowledge of Communications and Computer Networks, use of the terminal on Linux and Windows systems</li>
+            </article>
+        </section>
+        <section class="row">
+            <article class="col-xxl columnas-decoradas">
+                <h5 class="text-center">Work Experience</h5>
+                <li class="text" id="professional-experience-1">Freelance: Residential Electrical Installations - Luminaire Installation <br>(2017-Present)</li>
+            </article>
+            <article class="col-xxl columnas-decoradas">
+                <h5 class="text-center">Work Experience</h5>
+                <li class="text" id="professional-experience-2">Freelance: General Purpose and Microelectronics Electronics Technician <br>(2020-Present)</li>
+            </article>
+            <article class="col-xxl columnas-decoradas">
+                <h5 class="text-center">Work Experience</h5>
+                <li class="text" id="professional-experience-3">Hired: Technical Support in IT Department - Secretaría General de Catastro Tucumán (Benjamín Aráoz 96 – San Miguel de Tucumán – Tel.: +54 (381) 421-7399) <br>(2023)</li>
+            </article>
+        </section>
+        <section class="row">
+            <article class="col-md columnas-decoradas" id="languages">
+                <h5 class="text-center">Language Proficiency</h5>
+                <div class="data-bar">
+                    <p class="">Technical English Applied to Programming and Related Areas</p>
+                    <div class="progress" style="height: 0.5rem;">
+                        <div id="english-language" class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="data-bar">
+                    <p class="">Written English</p>
+                    <div class="progress" style="height: 0.5rem;">
+                        <div id="french-language" class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="data-bar">
+                    <p class="">Spoken English</p>
+                    <div class="progress" style="height: 0.5rem;">
+                        <div id="portuguese-language" class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </article>
+            <article class="col-md columnas-decoradas" id="skills">
+                <h5 class="text-center">Skills</h5>
+                <div class="data-bar">
+                    <p>Willingness to learn new technologies and methodologies</p>
+                    <div class="progress" style="height: 0.5rem;" >
+                        <div id="willingness" class="progress-bar" role="progressbar" style="width: 99%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="data-bar">
+                    <p>Teamwork and Communication</p>
+                    <div class="progress" style="height: 0.5rem;" >
+                        <div id="teamwork" class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="data-bar">
+                    <p>Office Tools</p>
+                    <div class="progress" style="height: 0.5rem;" >
+                        <div id="office-tools" class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>    
+    
+    <footer id="footer">
+        <p class="text-center">Site created as a sample</p>
+        <p class="text-center">2023 All rights reserved</p>
+    </footer>
+</body>
+</html>
