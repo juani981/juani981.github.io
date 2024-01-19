@@ -18,22 +18,13 @@
     padding: 0;
 
 }
-
-header{
-    align-items: center;
-    color: var(--color-fuente);
-}
-body,#main-container{
+body{
     color: var(--color-fuente);
     background-color: var(--color-cuerpo-fondo);
     transition: color 1s ease-out;
 }
 h1{
     text-align: center;
-}
-h5{
-    text-align: center;
-    padding-bottom: 1rem;
 }
 #foto_perfil{
     background-color: var(--color-decoraciones-fondo);
@@ -45,17 +36,12 @@ h5{
     justify-content: left;
     align-items: center;
 }
-
+#spinner{
+    transition: all 1s;
+}
 .columnas-decoradas{
     background-color: var(--color-decoraciones-fondo);
     margin: 1rem;
-}
-a{
-    text-decoration: none;
-}
-.fa-arrow-up-right-from-square{
-    margin-left: 1rem;
-    color: var(--color-fuente);
 }
 .barra-de-datos{
     padding-top: 1rem;
@@ -64,30 +50,20 @@ a{
 footer{
     margin-top: 5rem;
 }
-#link-web{
-    display: none;
-}
 
 /*El siguiente codigo está encargado del tema oscuro, su slider, y el tooltip*/
   .switch-wrapper{
-    /*padding-top: 0.4rem;
-    padding-left: 2rem;*/
-    /*padding-right: 2rem;*/
-    /* position: absolute; */
-    top: 1rem; left: 1rem;
+    padding-top: 0.5rem;
+    padding-left: 2rem;
     display: flex;
     align-items: center;
-
   }
   .switch-wrapper #switch{
     margin-left: 1rem;
-    margin-right: 1rem;
-    align-items: center;
-}
+  }
   
-  #switch::after{
-    content: "Modo Oscuro";
-    visibility: hidden;
+  p.tooltip-text {
+    display: none;
     position: absolute;
     top: 3rem;
     z-index: 1;
@@ -96,19 +72,14 @@ footer{
     padding: 8px;
     font-size: 1rem;
     border-radius: 2px;
-    /* animation: fadeIn 0.6s,fadeOut 1s; */
-    opacity: 0; 
-    /* define initial transition property */ 
-    transition: all .5s ease-in-out;
+    animation: fadeIn 0.6s;
   }
 
-#switch:hover:after {
-    /* provide only the final transition property */
-    visibility: visible;
-    opacity: 1;
-}
-
-
+  /*animacion simple que cambia la opacidad de invisible a visible el tooltip*/
+  @keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+  }
 
 
 
