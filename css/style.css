@@ -1,116 +1,117 @@
 /* Paleta de tema claro */
 :root {
-    --color-fuente: #000000;
-    --color-cuerpo-fondo: #5ebfff33;
-    --color-decoraciones-fondo: #32adff26;
-    --color-popup: #6fb7eb;
+  --color-fuente: #000000;
+  --color-cuerpo-fondo: #5ebfff33;
+  --color-decoraciones-fondo: #32adff26;
+  --color-popup: #6fb7eb;
 }
 /*Paleta de tema oscuro*/
-[tema="oscuro"]{
-    --color-fuente: #ffffff;
-    --color-cuerpo-fondo: #001e32;
-    --color-decoraciones-fondo: #003152;
-    --color-popup: #8cccf6;
+[tema="oscuro"] {
+  --color-fuente: #ffffff;
+  --color-cuerpo-fondo: #001e32;
+  --color-decoraciones-fondo: #003152;
+  --color-popup: #8cccf6;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
 }
 
-header{
-    align-items: center;
-    color: var(--color-fuente);
+header {
+  align-items: center;
+  color: var(--color-fuente);
 }
-body,#main-container{
-    color: var(--color-fuente);
-    background-color: var(--color-cuerpo-fondo);
-    transition: color 1s ease-out;
+body,
+#main-container {
+  color: var(--color-fuente);
+  background-color: var(--color-cuerpo-fondo);
+  transition: color 1s ease-out;
 }
-h1{
-    text-align: center;
+h1 {
+  text-align: center;
 }
-h5{
-    text-align: center;
-    padding-bottom: 1rem;
+h5 {
+  text-align: center;
+  padding-bottom: 1rem;
 }
-#foto_perfil{
-    background-color: var(--color-decoraciones-fondo);
+#presentation {
+  background-color: var(--color-decoraciones-fondo);
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-bottom: 0.5rem;
+  /*width: 80%;
+  margin-left: 5%;*/
 }
-#foto_perfil figure{
-    width: 128px;
-    height: 128px;
-    display: flex;
-    justify-content: left;
-    align-items: center;
+#foto_perfil {
+  width: 380px;
+  /*height: 128px;*/
+  display: flex;
+  align-items: center;
+  padding: 1rem;
 }
-
-.columnas-decoradas{
-    background-color: var(--color-decoraciones-fondo);
-    margin: 1rem;
+.columnas-decoradas {
+  background-color: var(--color-decoraciones-fondo);
+  margin: 0.5rem;
 }
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
-.fa-arrow-up-right-from-square{
-    margin-left: 1rem;
-    color: var(--color-fuente);
+.fa-arrow-up-right-from-square {
+  margin-left: 1rem;
+  color: var(--color-fuente);
 }
-.barra-de-datos{
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+.barra-de-datos {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
-footer{
-    margin-top: 5rem;
+footer {
+  margin-top: 5rem;
 }
-#link-web{
-    display: none;
+#link-web {
+  display: none;
 }
 
 /*El siguiente codigo está encargado del tema oscuro, su slider, y el tooltip*/
-  .switch-wrapper{
-    /*padding-top: 0.4rem;
+.switch-wrapper {
+  /*padding-top: 0.4rem;
     padding-left: 2rem;*/
-    /*padding-right: 2rem;*/
-    /* position: absolute; */
-    top: 1rem; left: 1rem;
-    display: flex;
-    align-items: center;
-
-  }
-  .switch-wrapper #switch{
-    margin-left: 1rem;
-    margin-right: 1rem;
-    align-items: center;
+  /*padding-right: 2rem;*/
+  /* position: absolute; */
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
 }
-  
-  #switch::after{
-    content: "Dark Mode";
-    visibility: hidden;
-    position: absolute;
-    top: 3rem;
-    z-index: 1;
-    background-color: var(--color-popup);
-    color: var(--color-fuente);
-    padding: 8px;
-    font-size: 1rem;
-    border-radius: 2px;
-    /* animation: fadeIn 0.6s,fadeOut 1s; */
-    opacity: 0; 
-    /* define initial transition property */ 
-    transition: all .5s ease-in-out;
-  }
+.switch-wrapper #switch {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  align-items: center;
+}
+
+#switch::after {
+  content: "Dark Mode";
+  visibility: hidden;
+  position: absolute;
+  top: 3rem;
+  z-index: 1;
+  background-color: var(--color-popup);
+  color: var(--color-fuente);
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 2px;
+  /* animation: fadeIn 0.6s,fadeOut 1s; */
+  opacity: 0;
+  /* define initial transition property */
+  transition: all 0.5s ease-in-out;
+}
 
 #switch:hover:after {
-    /* provide only the final transition property */
-    visibility: visible;
-    opacity: 1;
+  /* provide only the final transition property */
+  visibility: visible;
+  opacity: 1;
 }
-
-
-
-
 
 /*Opciones responsive*/
 

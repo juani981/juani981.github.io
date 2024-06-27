@@ -21,41 +21,15 @@
     <link rel="stylesheet" href="../css/style_slider.css" />
     <!-- html2pdf library is added -->
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
-      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"
+      integrity="sha512-dBB2PGgYedA6vzize7rsf//Q6iuUuMPvXCDybHtZP3hQXCPCD/YVJXK3QYZ2v0p7YCfVurqr8IdcSuj4CCKnGg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"></script>
     <title>Curriculum Vitae</title>
     <link rel="icon" type="image/x-icon" href="" id="favicon" />
   </head>
   <body id="main-container">
-    <script>
-      async function convertToPDF() {
-        // First, hide the download button and dark mode, and display the web link element
-        document.getElementById("download-button").style.display = "none";
-        document.getElementById("dark-mode-container").style.display = "none";
-        document.getElementById("link-web").style.display = "block";
-        document.getElementById("footer").style.display = "none";
-
-        var element = document.getElementById("main-container"); // Replace with the ID of the parent or container element
-        var options = {
-          margin: 0,
-          filename: "CV-CarrizoJuanIgnacio-en.pdf",
-          html2canvas: { scale: 2 },
-          jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
-          pagebreak: { mode: "avoid-all" },
-        };
-
-        // New Promise-based usage:
-        await html2pdf().set(options).from(element).save();
-
-        // Show the hidden elements again since hiding was temporary until the download is complete
-        document.getElementById("download-button").style.display = "block";
-        document.getElementById("dark-mode-container").style.display = "block";
-        document.getElementById("link-web").style.display = "none";
-        document.getElementById("footer").style.display = "block";
-      }
-    </script>
+    <script src="/js/pdfConverter.js"></script>
     <header
       class="d-flex flex-row align-items-center justify-content-between px-4">
       <div class="switch-wrapper" id="dark-mode-container">
@@ -66,10 +40,10 @@
         </label>
         <span class="col-auto fa-solid fa-moon"></span>
         <p class="text-center tooltip-text" id="dark-mode-help"></p>
-        <script src="../js/darkMode.js"></script>
+        <script src="/js/darkMode.js"></script>
       </div>
 
-      <h1 class="text-center">Curriculum Vitae</h1>
+      <h1 class="text-center" id="title">Curriculum Vitae</h1>
 
       <div class="link-web" id="download-button">
         <a href="#" onclick="convertToPDF();return false;"
@@ -86,10 +60,19 @@
       </div>
     </header>
     <section
-      class="d-flex justify-content-around align-items-center"
-      id="foto_perfil">
-      <h2 class="text-center" id="nombre">Juan Ignacio Carrizo</h2>
-      <figure class="foto">
+      class="d-flex flex-column flex-md-row justify-content-around align-items-center"
+      id="presentation">
+      <div class="mx-auto">
+        <h2 class="text-center">Juan Ignacio Carrizo</h2>
+        <cite class="text-start">
+          Graduate in Programming and current Computer Science Engineering
+          student. With a strong foundation in computer science, a comprehensive
+          understanding of the software development life cycle, and extensive
+          knowledge of Agile development methodologies, I bring practical skills
+          in analysis, design, and implementation of IT solutions to the table.
+        </cite>
+      </div>
+      <figure id="foto_perfil">
         <img
           style="display: block"
           class="img-fluid rounded-circle"
@@ -98,17 +81,7 @@
           src="../img/LinkedIn_pic.jfif" />
       </figure>
     </section>
-    <main class="container mx-auto">
-      <section class="row">
-        <cite class="text-center" id="professional-description">
-          University graduate in Programming seeking my first role as a software
-          developer. With solid technical knowledge backed by my academic
-          formation, I dive deep into analysis, design, and development of
-          software solutions. As a technician and developer, my mantra is to be
-          coolheaded, take a step back, take a deep breath and breakdown the
-          problem to start solving one step at a time.
-        </cite>
-      </section>
+    <main class="container mx-auto main">
       <section class="row">
         <article class="col-md columnas-decoradas" id="personal-information">
           <h5 class="text-center">My Personal Information</h5>
@@ -167,43 +140,104 @@
         </article>
       </section>
       <section class="row">
+        <article class="col-md columnas-decoradas" id="academic-background">
+          <h5 class="text-center">Academic Background</h5>
+          <ul>
+            <li>
+              <strong>University:</strong> National University of Tucumán -
+              Programador Universitario (Equivalent to Computer Programming
+              Degree) (2021-2024)
+            </li>
+            <li>
+              <strong>University:</strong> National University of Tucumán -
+              Ingeniero Informático (Equivalent to Bachelor of Science in
+              Computer Engineering with Specialization in Software Engineering)
+              (2024-Present)
+            </li>
+            <li>
+              <strong>Additional Course:</strong> Argentina Programa 4.0 - First
+              Steps in Front-End (2023)
+            </li>
+            <li>
+              <strong>Additional Course:</strong> Argentina Programa 4.0 - Data
+              Analysis in Python (2023)
+            </li>
+            <li>
+              <strong>Certification:</strong> EF SET -
+              <a href="https://cert.efset.org/C9i5dF"
+                >English Certification C2 Proficient
+                <span
+                  class="col-auto fa-solid fa-arrow-up-right-from-square"></span
+              ></a>
+            </li>
+          </ul>
+        </article>
+        <article class="col-md columnas-decoradas" id="programming-skills">
+          <h5 class="text-center">Programming Skills</h5>
+          <ul>
+            <li>
+              <strong>Foundations:</strong> Software Design and Architecture
+              Principles, Data Structures, Design Patterns, Software Engineering
+              and Agile frameworks, Object Oriented Programming, Functional
+              Programming, Pseudocode and Algorithmic Analysis, knowledge of
+              Communications and Computer Networks, Git version control, strong
+              use of Bash on Linux systems
+            </li>
+            <li>
+              <strong>Web:</strong> ASP.NET, ADO.NET, Laravel 9, PHP, HTML5,
+              CSS3, Bootstrap, JavaScript, React, WordPress, RESTful APIs
+            </li>
+            <li>
+              <strong>Data Science:</strong> Python, Numerical Methods, Pandas,
+              NumPy
+            </li>
+            <li>
+              <strong>Databases:</strong>MySQL, PostgreSQL, SQLite, PL/PgSQL
+            </li>
+            <li>
+              <strong>Misc languages:</strong> C/C++, C#, Haskell, ProLog, Lua
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section class="row">
         <article class="col-md columnas-decoradas" id="languages">
-          <h5 class="text-center">Foreign Language Proficiency</h5>
+          <h5 class="text-center">Language Skills</h5>
+
+          <!-- Spanish Proficiency -->
           <div class="barra-de-datos">
-            <p class="">B1 Level English - Written and Spoken</p>
+            <p class="">Native Spanish - Written and Spoken</p>
             <div class="progress" style="height: 0.5rem">
               <div
-                id="french-language"
+                id="spanish-language"
                 class="progress-bar"
                 role="progressbar"
-                style="width: 90%"
-                aria-valuenow="25"
+                style="width: 100%"
+                aria-valuenow="100"
                 aria-valuemin="0"
                 aria-valuemax="100"></div>
             </div>
           </div>
+          <!-- English Proficiency -->
           <div class="barra-de-datos">
-            <p class="">Technical English in IT, physics and mathematics</p>
+            <p class="">C1 Level English - Written and Spoken</p>
             <div class="progress" style="height: 0.5rem">
               <div
                 id="english-language"
                 class="progress-bar"
                 role="progressbar"
-                style="width: 95%"
-                aria-valuenow="25"
+                style="width: 90%"
+                aria-valuenow="90"
                 aria-valuemin="0"
                 aria-valuemax="100"></div>
             </div>
           </div>
-          <!-- <div class="barra-de-datos">
-              <p class="">Spoken English</p>
-              <div class="progress" style="height: 0.5rem;">
-                  <div id="portuguese-language" class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-          </div> -->
         </article>
+
+        <!-- Soft Skills Section -->
         <article class="col-md columnas-decoradas" id="skills">
-          <h5 class="text-center">Soft skills</h5>
+          <h5 class="text-center">Soft Skills</h5>
+
           <div class="barra-de-datos">
             <p>Willingness to learn new technologies and methodologies</p>
             <div class="progress" style="height: 0.5rem">
@@ -212,11 +246,12 @@
                 class="progress-bar"
                 role="progressbar"
                 style="width: 99%"
-                aria-valuenow="25"
+                aria-valuenow="99"
                 aria-valuemin="0"
                 aria-valuemax="100"></div>
             </div>
           </div>
+
           <div class="barra-de-datos">
             <p>Teamwork and Communication</p>
             <div class="progress" style="height: 0.5rem">
@@ -225,100 +260,34 @@
                 class="progress-bar"
                 role="progressbar"
                 style="width: 85%"
-                aria-valuenow="25"
+                aria-valuenow="85"
                 aria-valuemin="0"
                 aria-valuemax="100"></div>
             </div>
           </div>
-          <!-- <div class="barra-de-datos">
-              <p>Office Tools</p>
-              <div class="progress" style="height: 0.5rem;" >
-                  <div id="office-tools" class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-          </div> -->
         </article>
       </section>
-      <section class="row">
-        <article class="col-md columnas-decoradas" id="academic-background">
-          <h5 class="text-center">Academic Background</h5>
-          <p>
-            <strong>High School:</strong> San José Obrero School - Alderetes
-            (2015)
-          </p>
-          <p>
-            <strong>University:</strong> National University of Tucumán -
-            Electronic Engineering (2016-Present)
-          </p>
-          <p>
-            <strong>University:</strong> National University of Tucumán -
-            Computer Programming Degree (2021-2024)
-          </p>
-          <p>
-            <strong>University:</strong> National University of Tucumán -
-            Computer Engineering (2024-Present)
-          </p>
-          <p>
-            <strong>Additional Course:</strong> Argentina Programa 4.0 - First
-            Steps in Front-End (2023)
-          </p>
-          <p>
-            <strong>Additional Course:</strong> Argentina Programa 4.0 - Data
-            Analysis in Python (2023)
-          </p>
-        </article>
-        <article class="col-md columnas-decoradas" id="programming-skills">
-          <h5 class="text-center">Programming Skills</h5>
-          <li>
-            <strong>Foundations:</strong> Software Design and Architecture
-            Principles, Data Structures, Design Patterns, Software Engineering
-            and Agile frameworks, Object Oriented Programming, Functional
-            Programming, Pseudocode and Algorithmic Analysis, knowledge of
-            Communications and Computer Networks, Git version control, strong
-            use of Bash on Linux systems
-          </li>
-          <li>
-            <strong>Web:</strong> ASP.NET, ADO.NET, Laravel 9, PHP, HTML5, CSS3,
-            Bootstrap, JavaScript, React, WordPress, RESTful APIs
-          </li>
-          <li>
-            <strong>Data Science:</strong> Python, Numerical Methods, Pandas,
-            NumPy
-          </li>
-          <li>
-            <strong>Databases:</strong> Relational Databases, E/R, MySQL,
-            PostgreSQL, SQLite, PL/PgSQL
-          </li>
-          <li>
-            <strong>Programming languages:</strong> C/C++, C#, Haskell, ProLog,
-            Lua
-          </li>
-        </article>
-      </section>
+
       <section class="row">
         <article class="col-xxl columnas-decoradas">
           <h5 class="text-center">Work Experience</h5>
-          <li class="text" id="professional-experience-1">
-            Freelance: Residential Electrical Installations - Luminaire
-            Installation <br />(2017-Present)
-          </li>
-        </article>
-        <article class="col-xxl columnas-decoradas">
-          <h5 class="text-center">Work Experience</h5>
-          <li class="text" id="professional-experience-2">
-            Freelance: General Purpose and Microelectronics Electronics
-            Technician <br />(2020-Present)
-          </li>
-        </article>
-        <article class="col-xxl columnas-decoradas">
-          <h5 class="text-center">Work Experience</h5>
-          <li class="text" id="professional-experience-3">
-            Hired: Technical Support in IT Department - Secretaría General de
-            Catastro Tucumán <br />(2023)
-          </li>
+          <ul>
+            <li class="text" id="professional-experience-1">
+              Freelance: Residential Electrical Installations - Luminaire
+              Installation <br />(2017-Present)
+            </li>
+            <li class="text" id="professional-experience-2">
+              Freelance: General Purpose and Microelectronics Electronics
+              Technician <br />(2020-Present)
+            </li>
+            <li class="text" id="professional-experience-3">
+              Hired: Technical Support in IT Department - Secretaría General de
+              Catastro Tucumán <br />(2023)
+            </li>
+          </ul>
         </article>
       </section>
     </main>
-
     <footer id="footer">
       <p class="text-center">Site created as a sample</p>
       <p class="text-center">2023 All rights reserved</p>
