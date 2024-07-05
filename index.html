@@ -1,182 +1,299 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Curriculum Vitae Digital">
-    <meta name="author" content="Carrizo Juan Ignacio">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Se importa Font-Awesome-->
-    <script src="https://kit.fontawesome.com/53cb4d4e60.js" crossorigin="anonymous"></script>
-    <!--Se importa Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
-    <!--Se importan mas hojas de estilos por encima para aplicar estilos especificos-->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style_slider.css">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Digital Curriculum Vitae" />
+    <meta name="author" content="Carrizo Juan Ignacio" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font-Awesome is imported -->
+    <script
+      src="https://kit.fontawesome.com/53cb4d4e60.js"
+      crossorigin="anonymous"></script>
+    <!-- Bootstrap is imported -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous" />
+    <!-- Additional style sheets are imported above to apply specific styles -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style_slider.css" />
+    <!-- html2pdf library is added -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"
+      integrity="sha512-dBB2PGgYedA6vzize7rsf//Q6iuUuMPvXCDybHtZP3hQXCPCD/YVJXK3QYZ2v0p7YCfVurqr8IdcSuj4CCKnGg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
     <title>Curriculum Vitae</title>
-    <link rel="icon" type="image/x-icon" href="" id="favicon">
-</head>
-<body>
+    <link rel="icon" type="image/x-icon" href="" id="favicon" />
+  </head>
+  <body id="main-container">
+    <script src="/js/pdfConverter.js"></script>
+    <header
+      class="d-flex flex-row align-items-center justify-content-between px-4">
+      <div class="switch-wrapper" id="dark-mode-container">
+        <span class="col-auto fa-solid fa-sun"></span>
+        <label class="switch" id="switch">
+          <input type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+        <span class="col-auto fa-solid fa-moon"></span>
+        <p class="text-center tooltip-text" id="dark-mode-help"></p>
+        <script src="/js/darkMode.js"></script>
+      </div>
 
-    <header class="d-flex flex-row align-items-center justify-content-between px-4">
-        <div class="switch-wrapper">
-            <span class="col-auto fa-solid fa-sun"></span>
-            <label class="switch" id="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-            </label>
-            <span class="col-auto fa-solid fa-moon"></span>
-            <p class="text-center tooltip-text" id="ayuda-modo-oscuro"></p>
-            <script src="./js/temaOscuro.js"></script>
-    
-        </div>
-    
-        <h1 class="text-center">Curriculum Vitae</h1>  
-  
-        <div class="link-web">
-            <a href="https://juani981.github.io/">
-            <span class="col-auto text-center fa-solid fa-arrow-up-right-from-square"></span>
-            <span class="text">Version Web</span>
-            </a>
-        </div>
+      <h1 class="text-center" id="title">Curriculum Vitae</h1>
+
+      <div class="link-web" id="download-button">
+        <a href="#" onclick="convertToPDF();return false;"
+          >Descargar como PDF<span
+            class="col-auto fa-solid fa-file-arrow-down"></span
+        ></a>
+      </div>
+      <div class="link-web" id="link-web" display="none">
+        <a href="https://juani981cv-en.netlify.app/">
+          <span
+            class="col-auto text-center fa-solid fa-arrow-up-right-from-square"></span>
+          <span class="text">Ver en la Web</span>
+        </a>
+      </div>
     </header>
-    <section class="d-flex justify-content-around align-items-center" id="foto_perfil">
-        <h2 class="text-center" id="nombre">Juan Ignacio Carrizo</h2>
-        <figure class="foto">
-            <img style="display:block;" class="img-fluid rounded-circle" id="profile_pic" alt="Foto del rostro de la persona solicitante" src="img/LinkedIn_pic.jfif">  
-        </figure>
-    </section>
-<main class="container mx-auto">
-
-    <section class="row">
-        <cite class="text-center" id="descripcion-profesional">
-            Soy un profesional emergente, con predisposición a aprender tecnologías nuevas, ofrecer soluciones lógicas ante problemas de cualquier complejidad en el área IT, y desenvolverme de la mejor manera en un entorno de trabajo multidisciplinario.  
+    <section
+      class="d-flex flex-column flex-md-row justify-content-around align-items-center"
+      id="presentation">
+      <div class="mx-auto">
+        <h2 class="text-center">Juan Ignacio Carrizo</h2>
+        <cite class="text-start">
+          Graduado en Programación y estudiante de Ingeniería en Informática.
+          Con una sólida base en ciencias de la computación, una comprensión
+          integral del ciclo de vida del desarrollo de software y un extenso
+          conocimiento de las metodologías de desarrollo Ágil, aporto
+          habilidades prácticas en análisis, diseño e implementación de
+          soluciones informáticas.
         </cite>
+      </div>
+      <figure id="foto_perfil">
+        <img
+          style="display: block"
+          class="img-fluid rounded-circle"
+          id="profile_pic"
+          alt="Applicant's face photo"
+          src="../img/LinkedIn_pic.jfif" />
+      </figure>
     </section>
-    <section class="row">
-        
-        <article class="col-md columnas-decoradas" id="informacion-personal">
-            
-            <h5 class="text-center">Mis datos personales</h5>
-            <ul class="row list-unstyled text-left">
-                <li class="col-auto fa-solid fa-map-location-dot"></li>
-                <li class="col text-start" id="nacionalidad">Soy de: Tucumán</li>
-            </ul>
-            <ul class="row list-unstyled text-left">
-                <li class="col-auto fa-solid fa-location-dot"></li>
-                <li class="col text-start" id="direccion">Vivo en: Alderetes, Departamento Cruz Alta, Tucumán</li>
-            </ul>
-            <ul class="row list-unstyled text-left">
-                <li class="col-auto fa-solid fa-calendar-days"></li>
-                <li class="col text-start" id="edad">Tengo: 25 años</li>
-            </ul>
-        </article>
-        <article class="col-md columnas-decoradas" id="redes-sociales">
-            <h5 class="text-center">Mis datos de Contacto</h5>
-            <ul class="row list-unstyled text-left justify-content-between">                
-                <li class="col-auto fa-solid fa-envelope"></li>
-                <li class="col text-start" id="mail">juanicarrizo97@gmail.com</li>
-            </ul>
-            <ul class="row list-unstyled text-left">
-                <li class="col-auto fa-solid fa-phone"></li>
-                <li class="col text-start" id="telefono">(+54) 381 670-6133</li>
-            </ul>
-            <ul class="row list-unstyled text-left">
-                <li class="col-auto fa-brands fa-linkedin"></li>
-                <li class="col text-start" id="linkedin"><a href="https://www.linkedin.com/in/juan-ignacio-carrizo-juani981">Mi perfil en LinkedIn<span class="col-auto fa-solid fa-arrow-up-right-from-square"></span></a></li>
-                
-            </ul>
-            
-        </article>
-    </section>
-    <section class="row">
-        <article class="col-md columnas-decoradas" id="Formacion-academica">
-            <h5 class="text-center">Formación Académica</h5>
-            <p><strong>Secundario</strong> Bachiller - Colegio San José Obrero - Alderetes (2015)</p>
-            <p><strong>Universitario:</strong> UNT - Ingeniería Electrónica (2016-Actualidad)</p>
-            <p><strong>Universitario:</strong> UNT - Programador Universitario (Último año en curso) (2021-Actualidad)</p>
-            <p><strong>Curso Adicional:</strong> Argentina Programa 4.0 - Primeros Pasos en Front-End (2023)</p>
-            <p><strong>Curso Adicional:</strong> Argentina Programa 4.0 - Analisis de Datos en Python (2023)</p>
-        </article>
-        <article class="col-md columnas-decoradas" id="Formacion-academica">
-            <h5 class="text-center">Habilidades en Programación</h5>
-            <li><strong>C#:</strong> POO, .NET Framework, ASP.NET patrón MVC, CRUD en ADO.NET, Páginas en Blazor, Linq.</li>
-            <li><strong>Python:</strong> POO, Métodos Numéricos y Ciencia de datos</li>
-            <li><strong>Web:</strong> Framework Laravel 9, php, HTML5, Bootstrap, CSS3, JavaScript</li>
-            <li><strong>Bases de datos:</strong> E/R, MySQL, PostgreSQL, SQLite</li>
-            <li><strong>Otros:</strong> Programación en C/C++, Lua, Control de versiones con git, Pseudocódigo y análisis de algoritmos, uso de terminal en Linux y Windows</li>
-        </article>
-    </section>
-    <section class="row">
-        <article class="col-xxl columnas-decoradas">
-            <h5 class="text-center">Experiencia Laboral</h5>
-            <li class="text" id="experiencia-profesional-1">Freelance: Instalaciones Eléctricas Domiciliarias - Instalación de Luminaria 
-                <br>(2017-Actualidad)
+    <main class="container mx-auto main">
+      <section class="row">
+        <article class="col-md columnas-decoradas" id="personal-information">
+          <h5 class="text-center">Mi información personal</h5>
+          <ul class="row list-unstyled text-left">
+            <li class="col-auto fa-solid fa-map-location-dot"></li>
+            <li class="col text-start" id="nationality">
+              Soy de: Tucumán, Argentina
             </li>
+          </ul>
+          <ul class="row list-unstyled text-left">
+            <li class="col-auto fa-solid fa-location-dot"></li>
+            <li class="col text-start" id="address">
+              Vivo en: Alderetes, Cruz Alta, Tucumán, Argentina
+            </li>
+          </ul>
+          <ul class="row list-unstyled text-left">
+            <li class="col-auto fa-solid fa-calendar-days"></li>
+            <li class="col text-start" id="age">Edad: 26 años</li>
+          </ul>
+          <ul class="row list-unstyled text-left">
+            <li class="col-auto fa-solid fa-briefcase"></li>
+            <li class="col text-start" id="occupation">
+              Ocupación: Técnico electrónico Freelance
+            </li>
+          </ul>
         </article>
+        <article class="col-md columnas-decoradas" id="contact-details">
+          <h5 class="text-center">Detalles de Contacto</h5>
+          <ul class="row list-unstyled text-left justify-content-between">
+            <li class="col-auto fa-solid fa-envelope"></li>
+            <li class="col text-start" id="email">juanicarrizo97@gmail.com</li>
+          </ul>
+          <ul class="row list-unstyled text-left">
+            <li class="col-auto fa-solid fa-phone"></li>
+            <li class="col text-start" id="phone">(+54) 381 670-6133</li>
+          </ul>
+          <ul class="row list-unstyled text-left">
+            <li class="col-auto fa-brands fa-linkedin"></li>
+            <li class="col text-start" id="linkedin">
+              <a
+                href="https://www.linkedin.com/in/juan-ignacio-carrizo-juani981"
+                >Mi LinkedIn<span
+                  class="col-auto fa-solid fa-arrow-up-right-from-square"></span
+              ></a>
+            </li>
+          </ul>
+          <ul class="row list-unstyled text-left">
+            <li class="col-auto fa-brands fa-github"></li>
+            <li class="col text-start" id="github">
+              <a href="https://github.com/juani981"
+                >Mi Github<span
+                  class="col-auto fa-solid fa-arrow-up-right-from-square"></span
+              ></a>
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section class="row">
+        <article class="col-md columnas-decoradas" id="academic-background">
+          <h5 class="text-center">Estudios Académicos</h5>
+          <ul>
+            <li>
+              <strong>Universidad:</strong> Universidad Nacional de Tucumán -
+              Programador Universitario (2021-2024)
+            </li>
+            <li>
+              <strong>Universidad:</strong> Universidad Nacional de Tucumán -
+              Ingeniero Informático (2024-Actualidad)
+            </li>
+            <li>
+              <strong>Curso:</strong> Argentina Programa 4.0 - First Steps in
+              Front-End (2023)
+            </li>
+            <li>
+              <strong>Curso:</strong> Argentina Programa 4.0 - Data Analysis in
+              Python (2023)
+            </li>
+            <li>
+              <strong>Certificación:</strong> EF SET -
+              <a href="https://cert.efset.org/C9i5dF"
+                >English Certification C2 Proficient
+                <span
+                  class="col-auto fa-solid fa-arrow-up-right-from-square"></span
+              ></a>
+            </li>
+          </ul>
+        </article>
+        <article class="col-md columnas-decoradas" id="programming-skills">
+          <h5 class="text-center">Habilidades de Programación</h5>
+          <ul>
+            <li>
+              <strong>Bases:</strong> Principios de diseño y Arquitectura de
+              Software, Estructuras de Datos, Patrones de Diseño, Ingeniería de
+              Software y marcos de trabajo Ágiles, Programación Orientada a
+              Objetos, Programación Funcional, Pseudocódigo y Análisis
+              Algorítmico, conocimientos de Comunicaciones y Redes de
+              Computadoras, control de versiones con Git, uso avanzado de Bash
+              en sistemas Linux.
+            </li>
+            <li>
+              <strong>Web:</strong> ASP.NET, ADO.NET, Laravel 9, PHP, HTML5,
+              CSS3, Bootstrap, JavaScript, React, WordPress, RESTful APIs
+            </li>
+            <li>
+              <strong>Data Science:</strong> Python, Métodos Numéricos, Pandas,
+              NumPy
+            </li>
+            <li>
+              <strong>Databases:</strong>MySQL, PostgreSQL, SQLite, PL/PgSQL
+            </li>
+            <li>
+              <strong>Otros languages:</strong> C/C++, C#, Haskell, ProLog, Lua
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section class="row">
+        <article class="col-md columnas-decoradas" id="languages">
+          <h5 class="text-center">Lenguajes</h5>
+
+          <!-- Spanish Proficiency -->
+          <div class="barra-de-datos">
+            <p class="">Español Nativo</p>
+            <div class="progress" style="height: 0.5rem">
+              <div
+                id="spanish-language"
+                class="progress-bar"
+                role="progressbar"
+                style="width: 100%"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+          </div>
+          <!-- English Proficiency -->
+          <div class="barra-de-datos">
+            <p class="">Inglés Nivel C1 - Written and Spoken</p>
+            <div class="progress" style="height: 0.5rem">
+              <div
+                id="english-language"
+                class="progress-bar"
+                role="progressbar"
+                style="width: 90%"
+                aria-valuenow="90"
+                aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Soft Skills Section -->
+        <article class="col-md columnas-decoradas" id="skills">
+          <h5 class="text-center">Soft Skills</h5>
+
+          <div class="barra-de-datos">
+            <p>Predisposición a formarme en nuevas tyecnologías</p>
+            <div class="progress" style="height: 0.5rem">
+              <div
+                id="willingness"
+                class="progress-bar"
+                role="progressbar"
+                style="width: 99%"
+                aria-valuenow="99"
+                aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="barra-de-datos">
+            <p>Comunicación y marcos de trabajo ágiles</p>
+            <div class="progress" style="height: 0.5rem">
+              <div
+                id="teamwork"
+                class="progress-bar"
+                role="progressbar"
+                style="width: 85%"
+                aria-valuenow="85"
+                aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="row">
         <article class="col-xxl columnas-decoradas">
-            <h5 class="text-center">Experiencia Laboral</h5>
-            <li class="text" id="experiencia-profesional-2">Freelance: Técnico en Electrónica de propósito general y microelectrónica
-                <br>(2020-Actualidad) 
-            </li> 
+          <h5 class="text-center">Work Experience</h5>
+          <ul>
+            <li class="text" id="professional-experience-1">
+              Freelance: Instalaciones Eléctricas Domiciliarias - Instalación de
+              Luminaria
+              <br />(2017-Actualidad)
+            </li>
+            <li class="text" id="professional-experience-2">
+              Freelance: Técnico en Electrónica de propósito general y
+              microelectrónica
+              <br />(2020-Actualidad)
+            </li>
+            <li class="text" id="professional-experience-3">
+              Contratado: Soporte Técnico en Departamento Sistemas - Dirección
+              General de Catastro Tucumán (Av. Benjamín Aráoz 96 – San Miguel de
+              Tucumán – Tel.: +54 (381) 421-7399)
+              <br />(2023)
+            </li>
+          </ul>
         </article>
-        <article class="col-xxl columnas-decoradas">
-            <h5 class="text-center">Experiencia Laboral</h5>
-            <li class="text" id="experiencia-profesional-2">Contratado: Soporte Técnico en Departamento Sistemas - Dirección General de Catastro Tucumán (Av. Benjamín Aráoz 96 – San Miguel de Tucumán – Tel.: +54 (381) 421-7399)
-                <br>(2023) 
-            </li> 
-        </article>
-    </section>
-    <section class="row">    
-    
-        <article class="col-md columnas-decoradas" id="idiomas">
-                <h5 class="text-center">Destreza en Idiomas</h5>
-                <div class="barra-de-datos">
-                    <p class="">Inglés Técnico Aplicado al área de Programación y afines</p>
-                    <div class="progress" style="height: 0.5rem;">
-                        <div id="lenguaje-ingles" class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-                <div class="barra-de-datos">
-                    <p class="">Inglés Escrito</p>
-                    <div class="progress" style="height: 0.5rem;">
-                    <div id="lenguaje-frances" class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>    
-                <div class="barra-de-datos">  
-                    <p class="">Inglés Oral</p> 
-                    <div class="progress" style="height: 0.5rem;">
-                        <div id="lenguaje-portuges" class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-        </article>    
-        <article class="col-md columnas-decoradas" id="aptitudes">
-            <h5 class="text-center">Aptitudes</h5>
-            <div class="barra-de-datos">
-                <p>Predisposicion a aprender nuevas tecnologías y metodologías</p>
-                <div class="progress" style="height: 0.5rem;" >
-                    <div id="predisposicion" class="progress-bar" role="progressbar" style="width: 99%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-            </div>
-            <div class="barra-de-datos">  
-                <p>Trabajo y Comunicación en el trabajo en equipo</p>
-                <div class="progress" style="height: 0.5rem;" >
-                    <div id="trabajo-en-equipo" class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-            </div>
-            <div class="barra-de-datos">
-                <p>Herramientas de Ofimática</p>
-                    <div class="progress" style="height: 0.5rem;" >
-                    <div id="ofimatica" class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>    
-            </div>
-        </article>
-    </section>
-        
-</main>
-    <footer>
-        <p class="text-center">Sitio creado por Juan Ignacio Carrizo</p>
-        <p class="text-center">2023 Todos los derechos reservados</p>
+      </section>
+    </main>
+    <footer id="footer">
+      <p class="text-center">Sitio creado como muestra</p>
+      <p class="text-center">2023 All rights reserved</p>
     </footer>
-</body>
+  </body>
 </html>
