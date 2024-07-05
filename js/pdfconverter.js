@@ -7,7 +7,7 @@ async function convertToPDF() {
   const options = {
     margin: 0,
     enableLinks: true,
-    filename: "CV-CarrizoJuanIgnacio-en.pdf",
+    filename: "CV-CarrizoJuanIgnacio-es.pdf",
     html2canvas: {
       allowTaint: true,
       scale: 2,
